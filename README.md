@@ -65,7 +65,12 @@ MovieVerse is an Android application that allows users to search and view detail
 
 2. **Add your OMDB API Key**
 
-   Open (or create) the `gradle.properties` file in the root directory and add:
+   Open (or create) the `gradle.properties` file in the root directory and add these lines:
+   org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
+   android.useAndroidX=true
+   kotlin.code.style=official
+   android.nonTransitiveRClass=true
+   API_KEY = your_api_key (format like - 2e13v518)
 
    ```properties
    API_KEY=your_api_key_here
