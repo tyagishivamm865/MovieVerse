@@ -69,7 +69,7 @@ class HomeViewModel @Inject constructor(
                         fetchMultipleMoviesForHome()
                     } else {
                         _movieLiveData.value =
-                            UiState.Error("Network is Unavailable") // Handle error if network is unavailable
+                            UiState.Error("Network is Unavailable")
                     }
                 }
             } else {
@@ -122,6 +122,10 @@ class HomeViewModel @Inject constructor(
                 }
 
                 val movies = deferredList.awaitAll().filterNotNull()
+                if (movies.isEmpty()) {
+                    _movieLiveData.value = UiState.Error("No Internet Connection or Server Error")
+                    return@launch
+                }
                 val offlineMovies = movies.map {
                     OfflineMovieResponse(
                         it.imdbRating!!,
