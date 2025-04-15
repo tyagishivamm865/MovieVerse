@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.omdbmovies.movieverse.presentation.HomeScreen.HomeFragment"
+        android:label="Home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.omdbmovies.movieverse.presentation.FavouriteMovieScreen.FavouriteFragment"
+        android:label="Favourites">
+
+        <action
+            android:id="@+id/action_favouriteFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.omdbmovies.movieverse.presentation.MovieDetailScreen.MovieDetailFragment"
+        android:label="Movie Detail" />
+</navigation>
